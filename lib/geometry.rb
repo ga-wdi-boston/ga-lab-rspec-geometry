@@ -31,8 +31,8 @@ module Geometry
     attr_accessor :length, :width
 
     def initialize(length, width)
-      @length = length
-      @width = width
+      @length = length.to_f
+      @width = width.to_f
     end
 
     def perimeter

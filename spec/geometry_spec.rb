@@ -57,4 +57,11 @@ describe Geometry::Rectangle do
 end
 
 describe Geometry::Circle do 
+  let(:radius) { 5 }
+
+  subject { Geometry::Circle.new(radius) }
+
+  its(:radius) { should be 5.0 }
+  its(:circumference) { should be 10.0 * Math::PI }
+  its(:area) { should be 25.0 * Math::PI }
 end

@@ -45,5 +45,18 @@ module Geometry
   end
 
   class Circle
+    attr_accessor :radius
+
+    def initialize(radius)
+      @radius = radius.to_f
+    end
+
+    def circumference
+      2 * @radius * Math::PI
+    end
+
+    def area
+      Math::PI * @radius ** 2
+    end
   end
 end

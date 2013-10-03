@@ -1,40 +1,107 @@
 require 'pry'
+
 module Geometry
-
   class Triangle
-    attr_accessor :sideA, :sideB, :sideC
+    attr_accessor :a, :b, :c
 
-    def initialize(sideA, sideB, sideC)
-      @sideA = sideA
-      @sideB = sideB
-      @sideC = sideC
+    def initialize(a,b,c)
+      @a = a
+      @b = b
+      @c = c
+    end
+
+    def valid?
+      if (@a + @b > @c) && (@b + @c > @a) && (@c + @a > @b)
+        true
+      else
+        false
+      end
     end
 
     def perimeter
-      @sideA + @sideB + @sideC
+      if valid?
+        @a + @b + @c
+      else
+        puts "Not a valid triangle"
+      end
     end
 
     def area
-      perim = ((@sideA + @sideB + @sideC)/2).to_f
-      num_to_sqrt = perim * (perim - @sideA) * (perim - @sideB) * (perim - @sideC)
-      Math.sqrt(num_to_sqrt)
+      if valid?
+        semi_perimeter = self.perimeter.to_f / 2
+        num_to_sqrt = semi_perimeter * (semi_perimeter - @a) * (semi_perimeter - @b) * (semi_perimeter - @c)
+        area = Math.sqrt(num_to_sqrt)
+        return area.round(2)
+      else
+        puts "Not a valid triangle"
+      end
     end
 
     def angles
-      # [Math.acos(Math.cos(@sideA)), Math.acos(Math.cos(@sideB)), Math.acos(Math.cos(@sideC))]
-      [Math.cos(((@sideB ** 2) + (@sideC ** 2) - (@sideA ** 2))/(2 * @sideB * @sideC)), Math.cos(((@sideA ** 2) + (@sideC ** 2) - (@sideB ** 2))/(2 * @sideA * @sideC)), Math.cos(((@sideA ** 2) + (@sideB ** 2) - (@sideC ** 2))/(2 * @sideA * @sideB))]
-    end
+      angles = []
 
-    def valid
-      if (@sideA + @sideB > @sideC) && (@sideA + @sideC > @sideB) && (@sideB + @sideC > @sideA)
-        return true
-      else
-        return false
+      def law_of_cosines(a, b, c)
+      cos = ((a ** 2) + (b ** 2) - (c ** 2)).to_f / (2 * a * b).to_f
+      Math.acos(cos).round(2)
       end
+      
+      angles << law_of_cosines(@b, @c, @a)
+      angles << law_of_cosines(@c, @a, @b)
+      angles << law_of_cosines(@a, @b, @c)
+      return angles
     end
   end
+
+
+  class Rectangle 
+    attr_accessor :length, :width
+
+    def initialize(length, width)
+      @length = length
+      @width = width
+    end
+
+    def area
+      @length * @width
+    end
+
+    def perimeter
+      (@length * 2) + (@width * 2)
+    end
+
+  end
+
+
+  class Circle 
+    attr_accessor :radius
+
+    def initialize(radius)
+      @radius = radius
+    end
+
+    def circumference 
+      2 * @radius * Math::PI
+    end
+
+    def area 
+      Math::PI * (@radius ** 2)
+    end
+
+
+
+  end
+
 end
 
-tri = Geometry::Triangle.new(4, 5, 6)
+new_t = Geometry::Triangle.new(3,4,5)
 
-# binding.pry
+puts new_t.valid?
+puts new_t.area
+puts new_t.angles
+
+
+
+# triangle
+
+# angles (outputs array of angles)
+# valid?

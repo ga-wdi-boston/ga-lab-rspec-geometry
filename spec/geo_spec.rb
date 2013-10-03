@@ -1,9 +1,7 @@
 require 'spec_helper'
 require_relative '../lib/geometry'
 
-describe Geometry,  
-
-describe Triangle, "#perimeter" do 
+describe Geometry::Triangle, "#perimeter" do 
   it "should have a method called perimeter" do
     should respond_to :perimeter
   end
@@ -11,11 +9,11 @@ describe Triangle, "#perimeter" do
   it "should have three required parameters named @sideA, @sideB, @sideC" do
     parameters = method(:perimeter).parameters
     expect(parameters[0]).to include(:req)
-    expect(parameters[0]).to include(:@sideA)
+    expect(parameters[0]).to include(:sideA)
     expect(parameters[1]).to include(:req)
-    expect(parameters[1]).to include(:@sideB)
+    expect(parameters[1]).to include(:sideB)
     expect(parameters[2]).to include(:req)
-    expect(parameters[2]).to include(:@sideC)
+    expect(parameters[2]).to include(:sideC)
     expect(parameters.length).to eq 3
   end  
 
@@ -33,19 +31,19 @@ describe Triangle, "#perimeter" do
   end
 end
 
-describe Triangle, "#valid" do
+describe Geometry::Triangle, "#valid" do
   it "should be a valid traingle" do
-    should repond_to :valid
+    should respond_to :valid
   end
 
   it "should have three required parameters named @sideA, @sideB, @sideC" do
     parameters = method(:valid).parameters
     expect(parameters[0]).to include(:req)
-    expect(parameters[0]).to include(:@sideA)
+    expect(parameters[0]).to include(:sideA)
     expect(parameters[1]).to include(:req)
-    expect(parameters[1]).to include(:@sideB)
+    expect(parameters[1]).to include(:sideB)
     expect(parameters[2]).to include(:req)
-    expect(parameters[2]).to include(:@sideC)
+    expect(parameters[2]).to include(:sideC)
     expect(parameters.length).to eq 3
   end
 
@@ -63,7 +61,7 @@ describe Triangle, "#valid" do
   end
 end
 
-describe Triangle, "#area" do 
+describe Geometry::Triangle, "#area" do 
   it "should have a method called area" do
     should respond_to :area
   end
@@ -71,11 +69,11 @@ describe Triangle, "#area" do
   it "should have three required parameters named @sideA, @sideB, @sideC" do
     parameters = method(:area).parameters
     expect(parameters[0]).to include(:req)
-    expect(parameters[0]).to include(:@sideA)
+    expect(parameters[0]).to include(:sideA)
     expect(parameters[1]).to include(:req)
-    expect(parameters[1]).to include(:@sideB)
+    expect(parameters[1]).to include(:sideB)
     expect(parameters[2]).to include(:req)
-    expect(parameters[2]).to include(:@sideC)
+    expect(parameters[2]).to include(:sideC)
     expect(parameters.length).to eq 3
   end
 
@@ -93,18 +91,18 @@ describe Triangle, "#area" do
   end
 end
 
-describe Triangle, "#angles" do 
+describe Geometry::Triangle, "#angles" do 
   it "should have a method called angles" do
     should respond_to :angles
   end
   it "should have three required parameters named @sideA, @sideB, @sideC" do
     parameters = method(:angles).parameters
     expect(parameters[0]).to include(:req)
-    expect(parameters[0]).to include(:@sideA)
+    expect(parameters[0]).to include(:sideA)
     expect(parameters[1]).to include(:req)
-    expect(parameters[1]).to include(:@sideB)
+    expect(parameters[1]).to include(:sideB)
     expect(parameters[2]).to include(:req)
-    expect(parameters[2]).to include(:@sideC)
+    expect(parameters[2]).to include(:sideC)
     expect(parameters.length).to eq 3 
   end
 
@@ -122,29 +120,29 @@ describe Triangle, "#angles" do
   end
 end
 
-describe Rectangle, "#perimeter" do 
-  it "should have a method called perimeter" do
-    should respond_to :perimeter
-  end
-end
+# describe Rectangle, "#perimeter" do 
+#   it "should have a method called perimeter" do
+#     should respond_to :perimeter
+#   end
+# end
 
-describe Rectangle, "#area" do 
-  it "should have a method called area" do
-    should respond_to :area
-  end
-end
+# describe Rectangle, "#area" do 
+#   it "should have a method called area" do
+#     should respond_to :area
+#   end
+# end
 
-describe Rectangle, "#circumference" do 
-  it "should have a method called circumference" do
-    should respond_to :circumference
-  end
-end
+# describe Rectangle, "#circumference" do 
+#   it "should have a method called circumference" do
+#     should respond_to :circumference
+#   end
+# end
 
-describe Rectangle, "#area" do 
-  it "should have a method called area" do
-    should respond_to :area
-  end
-end
+# describe Rectangle, "#area" do 
+#   it "should have a method called area" do
+#     should respond_to :area
+#   end
+# end
 
 
 
@@ -154,9 +152,9 @@ end
 
 
   
-    expect(perimeter(10)).to eq [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
-    expect(perimeter(39)).to eq [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309, 3524578, 5702887, 9227465, 14930352, 24157817, 39088169]
-  end
+#     expect(perimeter(10)).to eq [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+#     expect(perimeter(39)).to eq [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309, 3524578, 5702887, 9227465, 14930352, 24157817, 39088169]
+#   end
 
 
-end
+# end

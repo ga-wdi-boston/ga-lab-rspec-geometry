@@ -42,13 +42,14 @@ module Geometry
 
       def law_of_cosines(a, b, c)
       cos = ((a ** 2) + (b ** 2) - (c ** 2)).to_f / (2 * a * b).to_f
-      Math.acos(cos).round(2)
+      (Math.acos(cos) / (Math::PI / 180)).round(2)
       end
       
       angles << law_of_cosines(@b, @c, @a)
       angles << law_of_cosines(@c, @a, @b)
       angles << law_of_cosines(@a, @b, @c)
       return angles
+
     end
   end
 

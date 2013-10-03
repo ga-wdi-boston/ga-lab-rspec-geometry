@@ -6,7 +6,6 @@ describe Geometry::Triangle do
   let(:sideA) { 3 }
   let(:sideB) { 4 }
   let(:sideC) { 5 }
-  let(:perimeter) { 12.0 }
 
   subject { Geometry::Triangle.new(sideA, sideB, sideC) }
 
@@ -29,7 +28,7 @@ describe Geometry::Triangle do
   it "should be valid" do 
     ex1 = Geometry::Triangle.new(20, 27, 38)
     ex2 = Geometry::Triangle.new(4, 20, 23)
-    ex3 = Geometry::Triangle.new(1, 2, 4)
+    ex3 = Geometry::Triangle.new(2.1, 2, 4)
     ex1.valid?.should be_true
     ex2.valid?.should be_true
     ex3.valid?.should be_true
@@ -46,6 +45,15 @@ describe Geometry::Triangle do
 end
 
 describe Geometry::Rectangle do
+  let(:length) { 10 }
+  let(:width) { 12.5 }
+
+  subject { Geometry::Rectangle.new(length, width) }
+
+  its(:length) { should eq 10.0 }
+  its(:width) { should eq 12.5 }
+  its(:perimeter) { should eq 22.5 }
+  its(:area) { should eq 125.0 }
 end
 
 describe Geometry::Circle do 

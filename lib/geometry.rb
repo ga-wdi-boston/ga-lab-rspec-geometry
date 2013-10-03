@@ -22,13 +22,26 @@ module Geometry
     end
 
     def valid?
-      (sideA > sideB + sideC) && (sideB > sideA + sideC) && (sideC > sideA + sideB)
+      (sideA < sideB + sideC) && (sideB < sideA + sideC) && (sideC < sideA + sideB)
     end
 
   end
 
   class Rectangle
+    attr_accessor :length, :width
 
+    def initialize(length, width)
+      @length = length
+      @width = width
+    end
+
+    def perimeter
+      @length + @width
+    end
+
+    def area
+      @length * @width
+    end
   end
 
   class Circle

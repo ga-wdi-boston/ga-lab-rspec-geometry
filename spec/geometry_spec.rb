@@ -3,51 +3,50 @@ require_relative '../lib/geometry'
 
 describe Geometry::Triangle do
 
-  let(:a) { 3 }
-  let(:b) { 4 }
-  let(:c) { 5 }
-  let(:perimeter) { 12 }
+  let(:sideA) { 3 }
+  let(:sideB) { 4 }
+  let(:sideC) { 5 }
+  let(:perimeter) { 12.0 }
 
-  subject { Geometry::Triangle.new(a, b, c) }
+  subject { Geometry::Triangle.new(sideA, sideB, sideC) }
 
+  its(:sideA) { should eq 3.0 }
+  its(:sideB) { should eq 4.0 }
+  its(:sideC) { should eq 5.0 }
   
-
-  it "should have an area" do
-    subject.area.should eq 6.0
-  end
-
-  its(:a) { should eq 3 }
-  its(:b) { should eq 4 }
-  its(:c) { should eq 5 }
-  
-  its(:perimeter) { should eq 12 }
+  its(:perimeter) { should eq 12.0 }
   # same as above
   # it "should have a perimeter" do
   #   subject.perimeter.should eq perimeter
   # end
+  its(:area) { should eq 6.0 }
+  # same as above
+  # it "should have an area" do
+  #   subject.area.should eq 6.0
+  # end
+  its(:angles) { should eq [30, 60, 90] }
+
+  it "should be valid" do 
+    ex1 = Geometry::Triangle.new(20, 27, 38)
+    ex2 = Geometry::Triangle.new(4, 20, 23)
+    ex3 = Geometry::Triangle.new(1, 2, 4)
+    ex1.valid?.should be_true
+    ex2.valid?.should be_true
+    ex3.valid?.should be_true
+  end
+
+  it "should not be valid" do
+    ex1 = Geometry::Triangle.new(14, 23, 38)
+    ex2 = Geometry::Triangle.new(3, 7, 23)
+    ex3 = Geometry::Triangle.new(1, 2, 3)
+    ex1.valid?.should be_false
+    ex2.valid?.should be_false
+    ex3.valid?.should be_false
+  end
 end
 
-# describe Geometry::Triangle, "#area" do
-#   it "should have a method called area" do
-#     should respond_to :area
-#   end
-# end
+describe Geometry::Rectangle do
+end
 
-
-# describe "#Triangle" do
-
-#   triangle = Triangle.new(rand(10), rand(10), rand(10))
-  
-#   it "should require three parameters" do
-    
-#   end
-
-#   it "should have a method called perimeter" do
-#   end
-
-#   it "should have a method called area" do
-#   end
-
-#   it "should have a method called valid?" do
-#   end
-# end
+describe Geometry::Circle do 
+end

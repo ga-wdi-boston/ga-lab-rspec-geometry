@@ -20,6 +20,19 @@ module Geometry
       num_to_sqrt = perim * (perim - @a) * (perim - @b) * (perim - @c)
       Math.sqrt(num_to_sqrt)
     end
+
+#Checking for Triangle Validity a + b > c
+
+    def validity 
+      if @a + @b <= @c || @c + @a <= @b || @b + @c <=@a
+        puts "These is not a valid triangle, please make sure 2 sides are greater than the addition of one."
+        return false 
+      else 
+        return true 
+      end 
+    end 
+
+
   end   
 
   class Rectangle
@@ -38,53 +51,25 @@ module Geometry
       @a * @b
   	end 
   end 
+
+  class Circle 
+    attr_accessor :a 
+    
+    def initialize(a)
+      @a = a.to_i
+    end 
+
+    def circumference 
+      2 * Math::PI * @a
+    end 
+
+    def area
+      Math::PI * (@a**2)
+    end 
+
+  end 
+
 end
 
-
-########################################
-# module Geometry 
-# 		class Triangle 
-# 			Perimeter @sideA , @sideB, @sideC
-# 			Area
-#       valid? 
-
-# 		class Rectangle
-# 			Perimeter  @sideA, @sideB, @sideC
-# 			Area 
-
-# 		class Circle 
-# 			Circumference  @radius 
-# 			Area 
-
-#####################################
-# require 'pry'
-
-# module Geometry 
-# 	# Geometry::Triangle
-# 	class Triangle 
-# 		attr_accessor :sideA , :sideB, :sideC
-
-# 		def initialize(sideA, sideB, sideC)
-# 		 @sideA = sideA
-# 		 @sideB = sideB
-# 		 @sideC = sideC
-# 		end
-
-# 		def perimeter
-# 			p = sideA * sideB * sideC
-# 		end 
-# 	end 
-# 	class Rectangle 
-# 		attr_accessor :length , :width 
-
-# 	end 
-
-# 	class Cirlce
-# 		attr_accessor :radius
-
-# 	end 
-
-
-# end 
 
 # #binding.pry 

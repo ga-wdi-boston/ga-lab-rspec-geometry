@@ -1,33 +1,31 @@
 require 'spec_helper'
-require_relative '../geom'
+require_relative '../lib/geom'
 
-describe '#circumfrence' do
-  it 'should have a method called perimeter' do
-    expect(method(:circumfrence))
-  end
+describe Geometry::Triangle do
+  let (:a) { 3}
+  let (:b) { 4}
+  let (:c) { 5}
+  subject { Geometry::Triangle.new(a, b, c) }
 
-  it 'should have an argument called radius' do
-    params = method(:circumfrence).parameters
-    expect(parameters[0]).to include(:radius)
-  end
-
-  it 'should return the circumfrence' do
-    expect(circumfrence(2)).to eq 18.84
-  end
+  its(:perimeter) { should eq 12}
+  its(:area) { should eq 6.0}
+  its (:angles) { should include(36.87, 53.13, 90.0)}
+  its(:valid?) { should be true}
 end
 
-describe '#area' do
-  it 'should have a method called area' do
-    expect(method(:area))
-  end
+describe Geometry::Circle do
+  let (:radius) { 5}
+  subject { Geometry::Circle.new(radius) }
 
-  it 'should have an argument called radius' do
-    params = method(:area).parameters
-    expect(parameters[0]).to include(:radius)
-  end
-
-  it 'should return the area' do
-    expect(circumfrence(2)).to eq 12.56
-  end
+  its(:area) { should eq 78.54}
+  its(:circumfrence) { should eq 31.42}
 end
 
+describe Geometry::Rectangle do
+  let (:length) { 3}
+  let (:width) { 5}
+  subject { Geometry::Rectangle.new(length, width)}
+
+  its (:perimeter) { should eq 16}
+  its (:area) { should eq 15}
+end

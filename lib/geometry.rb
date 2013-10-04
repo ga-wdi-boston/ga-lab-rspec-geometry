@@ -1,6 +1,7 @@
 require 'pry'
 
 module Geometry
+
   class Triangle
     attr_accessor :a, :b, :c
 
@@ -20,23 +21,24 @@ module Geometry
       Math.sqrt(num_to_sqrt)
     end
   end   
+
+  class Rectangle
+    attr_accessor :a ,:b
+
+    def initialize(a,b)
+      @a = a
+      @b = b
+    end 
+
+    def perimeter
+      2*(@a + @b)
+    end 
+
+    def area
+      @a * @b
+  	end 
+  end 
 end
-#   class Rectangle
-#     attr_accessor :e ,:f 
-#     def initialize(e,f)
-#       @e = a
-#       @f = b
-#     end 
-
-#     def rec_perimeter
-#       2*(@e + @f)
-#     end 
-
-#     def rec_area
-#       @e * @f
-#   	end 
-
-# end
 
 
 ########################################

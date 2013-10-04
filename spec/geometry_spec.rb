@@ -1,6 +1,9 @@
 require 'spec_helper'
 require_relative '../lib/geometry'
 
+
+##########TESTING FOR TRIANGLE##############
+
 describe Geometry::Triangle do
 	let(:a) {3}
 	let(:b) {4}
@@ -29,8 +32,35 @@ subject {Geometry::Triangle.new(a,b,c)}
 
 end 
 
+########TESTING FOR RECTANGLE ########
 
+describe Geometry::Rectangle do
+	let(:a) {5}
+	let(:b) {7}
+	let(:perimeter) {24}
+	let (:area) {35}
 
+#testing out attr_accessor
+#call a method named a on the subject 
+	its(:a) {should eq 5}
+	its(:b) {should eq 7}
+	its(:perimeter) {should eq 24}
+	its(:area) {should eq 35}
+
+subject {Geometry::Rectangle.new(a,b)}
+
+	it "should have a perimeter" do
+	subject.perimeter.should eq perimeter 
+		end 
+
+	it "should have an area" do
+	subject.area.should eq area 
+		end 
+
+end 
+
+describe Geometry::Circle do
+	let()
 
 
 

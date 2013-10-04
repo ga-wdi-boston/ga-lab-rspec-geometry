@@ -23,7 +23,8 @@ describe Geometry::Triangle do
   # it "should have an area" do
   #   subject.area.should eq 6.0
   # end
-  its(:angles) { should eq [30, 60, 90] }
+  its(:angles) { should eq [ 90.0, 53.13010235415599, 
+                            36.86989764584401 ] }
 
   it "should be valid" do 
     ex1 = Geometry::Triangle.new(20, 27, 38)
@@ -52,7 +53,7 @@ describe Geometry::Rectangle do
 
   its(:length) { should eq 10.0 }
   its(:width) { should eq 12.5 }
-  its(:perimeter) { should eq 22.5 }
+  its(:perimeter) { should eq 45.0 }
   its(:area) { should eq 125.0 }
 end
 

@@ -18,13 +18,23 @@ module Geometry
     end
 
     def angles 
-
+      [ law_of_cosines(sideA, sideB, sideC),
+        law_of_cosines(sideC, sideA, sideB), 
+        law_of_cosines(sideB, sideC, sideA) ]
     end
 
     def valid?
       (sideA < sideB + sideC) && (sideB < sideA + sideC) && (sideC < sideA + sideB)
     end
 
+    private
+
+    def law_of_cosines(a, b, c)
+      Math.acos((a**2 + b**2 - c**2) / (2*a*b)) * (180 / Math::PI)
+
+      # cos = ((a**2 + b**2 - c**2) / (2*a*b))
+      # (Math.acos(cos) / (Math::PI / 180)).round(2)
+    end
   end
 
   class Rectangle
@@ -36,7 +46,7 @@ module Geometry
     end
 
     def perimeter
-      @length + @width
+      2 * (@length + @width)
     end
 
     def area

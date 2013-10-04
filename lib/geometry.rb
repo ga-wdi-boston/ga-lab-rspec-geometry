@@ -10,39 +10,33 @@ module Geometry
       @c = c
     end
 
-    def tri_perimeter
+    def perimeter
       @a + @b + @c
     end
 
-    def tri_area
+    def area
       perim = (self.perimeter/2)
       num_to_sqrt = perim * (perim - @a) * (perim - @b) * (perim - @c)
       Math.sqrt(num_to_sqrt)
     end
-    
-  end
-  class Rectangle
-    attr_accessor :e ,:f 
-    def initialize(e,f)
-      @e = a
-      @f = b
-    end 
-
-    def rec_perimeter
-      2*(@e + @f)
-    end 
-
-    def rec_area
-      @e * @f
-  end 
-
+  end   
 end
+#   class Rectangle
+#     attr_accessor :e ,:f 
+#     def initialize(e,f)
+#       @e = a
+#       @f = b
+#     end 
 
+#     def rec_perimeter
+#       2*(@e + @f)
+#     end 
 
+#     def rec_area
+#       @e * @f
+#   	end 
 
-
-
-
+# end
 
 
 ########################################

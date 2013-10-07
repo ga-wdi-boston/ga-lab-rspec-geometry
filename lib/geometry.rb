@@ -23,17 +23,16 @@ module Geometry
 
 #Checking for Triangle Validity a + b > c
 
-    def validity 
-      if @a + @b <= @c || @c + @a <= @b || @b + @c <=@a
-        puts "These is not a valid triangle, please make sure 2 sides are greater than the addition of one."
-        return false 
-      else 
-        return true 
-      end 
+  def validity 
+    if @a + @b <= @c || @c + @a <= @b || @b + @c <=@a
+      puts "These is not a valid triangle, please make sure 2 sides are greater than the addition of one."
+      return false 
+    else 
+      return true 
     end 
+  end 
+end   
 
-
-  end   
 
   class Rectangle
     attr_accessor :a ,:b
@@ -49,12 +48,12 @@ module Geometry
 
     def area
       @a * @b
-  	end 
+    end 
   end 
 
   class Circle 
     attr_accessor :a 
-    
+
     def initialize(a)
       @a = a.to_i
     end 
@@ -72,4 +71,4 @@ module Geometry
 end
 
 
-# #binding.pry 
+#binding.pry 

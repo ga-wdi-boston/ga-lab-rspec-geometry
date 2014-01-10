@@ -26,5 +26,10 @@ describe Geometry::Triangle do
       triangle = Geometry::Triangle.new(1, 1, 10)
       expect(triangle.valid?).to eq false
     end
+
+    it 'determines whether a triangles dimensions are valid' do
+      triangle = Geometry::Triangle.new(3, 4, 5)
+      expect(triangle.valid?).to eq true
+    end
   end
 end

@@ -18,18 +18,4 @@ describe '#area' do
 end
 
 
-	# describe '#perimeter' do
-	# 	it 'adds the lengths of the sides' do
-	# 		rectangle = Geometry::Rectangle.new(4,5)
-	# 		expect(rectangle.perimeter).to eq 4+4+5+5
-	# 	end
-	# end
-
-	# describe '#area' do
-	# 	it 'multiplies length by width' do
-	# 		rectangle = Geometry::Rectangle.new(4,5)
-	# 		expect(rectangle.area).to eq 4*5
-	# 	end
-	# end
-
 end

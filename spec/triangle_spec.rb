@@ -51,10 +51,8 @@ describe Geometry::Triangle do
 		it 'sums to 180 degrees' do
 			triangle = Geometry::Triangle.new(3,4,5)
 			expect(triangle.angles.inject(0) {|sum, angle| sum + angle}).to be > 179.0
-			expect(triangle.angles.inject(0) {|sum, angle| sum + angle}).to be < 181.0
+			expect(triangle.angles.inject(0) {|sum, angle| sum + angle}).to be < 181.0 # in case of rounding error
 		end
 	end
-
-
 
 end

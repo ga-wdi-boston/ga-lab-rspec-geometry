@@ -38,5 +38,23 @@ describe Geometry::Triangle do
 		end
 	end
 
+	describe '#angles' do
+		it 'returns an array of floating-point numbers' do
+			triangle = Geometry::Triangle.new(3,4,5)
+			triangle.angles.each do |angle|
+				expect(angle).to be_a Float
+			end
+		end
+	end
+
+	describe '#angles' do
+		it 'sums to 180 degrees' do
+			triangle = Geometry::Triangle.new(3,4,5)
+			expect(triangle.angles.inject(0) {|sum, angle| sum + angle}).to be > 179.0
+			expect(triangle.angles.inject(0) {|sum, angle| sum + angle}).to be < 181.0
+		end
+	end
+
+
 
 end

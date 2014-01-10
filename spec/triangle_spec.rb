@@ -50,9 +50,12 @@ describe Geometry::Triangle do
 			expect(triangle.valid?).to eq true
 		end
 
+		it 'returns false if the sides are not valid length' do
+
+			triangle = Geometry::Triangle.new(2, 2, 6)
+			expect(triangle.valid?).to eq false
+		end
+
 	end
-
-
-
 
 end

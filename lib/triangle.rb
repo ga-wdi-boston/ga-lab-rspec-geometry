@@ -44,6 +44,7 @@ module Geometry
 
 		def valid?
 			return true if @sideA + @sideB > @sideC && @sideA + @sideC > @sideB && @sideB + @sideC > @sideA
+			else return false
 		end
 
 		private

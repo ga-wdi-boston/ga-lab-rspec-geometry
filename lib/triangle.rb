@@ -1,11 +1,12 @@
+
 module Geometry
   class Triangle
     attr_accessor :sideA, :sideB, :sideC, :angles
 
     def initialize(sideA, sideB, sideC)
-      @sideA = sideA
-      @sideB = sideB
-      @sideC = sideC
+      @sideA = sideA.to_f
+      @sideB = sideB.to_f
+      @sideC = sideC.to_f
       @angles = []
     end
 
@@ -19,12 +20,13 @@ module Geometry
       (s * (s - @sideA) * (s - @sideB) * (s - @sideC)) ** 0.5
     end
 
-    def angles(type)
-      @angles = [30, 60, 90] if type == 'right'
-      @angles = [45, 45, 90] if type == 'isosceles'
-      @angles = [60, 60, 60] if type == 'equilateral'
-
-      @angles
+    def angles
+      angleC = (@sideA ** 2 + @sideB ** 2 - @sideC ** 2) / (2 * @sideA * @sideB)
+      angleC = (Math.acos(angleC)) * 180 / Math::PI
+      angleB = (@sideA ** 2 + @sideC ** 2 - @sideB ** 2) / (2 * @sideA * @sideC)
+      angleB = (Math.acos(angleB)) * 180 / Math::PI
+      angleA = 180 - angleB - angleC
+      @angles << angleA.round << angleB.round << angleC.round
     end
 
     def valid?

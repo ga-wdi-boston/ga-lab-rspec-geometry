@@ -8,4 +8,11 @@ describe Geometry::Triangle do
       expect(triangle.perimeter).to eq 12
     end
   end
+
+  describe '#area' do
+    it 'multiplies the base times the height and divides it by two' do
+      triangle = Geometry::Triangle.new(5, 5, 5)
+      expect(triangle.area).to eq 6.25
+    end
+  end
 end

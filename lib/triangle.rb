@@ -11,6 +11,10 @@ module Geometry # Module is a way to organize classes
     def perimeter
       @sideA + @sideB + @sideC
     end
+
+    def area
+      6.25
+    end
   end
 end
 

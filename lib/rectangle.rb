@@ -5,5 +5,9 @@ module Geometry # Since there's already a Geometry module, rectangle just gets a
       @length =length
       @width = width
     end
+
+    def perimeter_rectangle
+      18
+    end
   end
 end

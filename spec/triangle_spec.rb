@@ -10,9 +10,14 @@ describe Geometry::Triangle do
   end
 
   describe '#area' do
-    it 'multiplies the base times the height and divides it by two' do
+    it 'calculates the area of a triangle' do
       triangle = Geometry::Triangle.new(5, 5, 5)
-      expect(triangle.area).to eq 6.25
+      expect(triangle.area).to eq Math.sqrt(18.75)
+    end
+
+    it 'multiplies the two shortest sides of a right triangle and divides by two' do
+      triangle = Geometry::Triangle.new(3, 4, 5)
+      expect(triangle.area).to eq 6
     end
   end
 end

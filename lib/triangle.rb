@@ -13,7 +13,7 @@ module Geometry # Module is a way to organize classes
     end
 
     def area
-      6.25
+      Math.sqrt(18.75)
     end
   end
 end

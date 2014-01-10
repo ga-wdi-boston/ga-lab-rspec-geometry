@@ -14,10 +14,11 @@ module Geometry # container for classes
 			@adjacent + @opposite + @hypotenuse
 		end
 
-		# # calculate the area
-		# def area
-		# 	@length * @width
-		# end
+		# calculate the area
+		def area
+			s = self.perimeter / 2
+			Math.sqrt(s*(s-@adjacent)*(s-@opposite)*(s-@hypotenuse))
+		end
 
 	end
 end

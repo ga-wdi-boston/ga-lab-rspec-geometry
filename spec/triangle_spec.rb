@@ -10,11 +10,11 @@ describe Geometry::Triangle do
 		end
 	end
 
-	# describe '#area' do
-	# 	it 'multiplies length by width' do
-	# 		triangle = Geometry::Triangle.new(4,5)
-	# 		expect(triangle.area).to eq 4*5
-	# 	end
-	# end
+	describe '#area' do
+		it 'uses heron\'s formula' do
+			triangle = Geometry::Triangle.new(3,4,5)
+			expect(triangle.area).to eq 6
+		end
+	end
 
 end

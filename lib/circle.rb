@@ -14,6 +14,10 @@ module Geometry
 		def circumfrence
 			2 * radius * Math::PI
 		end
+
+		def area_cir
+			(radius**2) * Math::PI
+		end
 	end
 end
 

@@ -3,32 +3,39 @@ require 'pry'
 module Geometry
 	class Triangle
 
-		attr_accessor :sides
+		attr_accessor :sideA, :sideB, :sideC
 
-		def initialize(sides)
-			@sides = {}
-
+		def initialize(sideA, sideB, sideC)
+			@sideA = sideA
+			@sideB = sideB
+			@sideC = sideC
 		end
 
-		def perimeter(hash)
-			sum = 0
-			hash.each do |key, value|
-				sum += value
-			end
-			return sum
+		def perimeter
+			sum = sideA + sideB + sideC
+			# sum = 0
+			# hash.each do |key, value|
+			# 	sum += value
+			# end
+			# return sum
 		end
 
-		def area(hash)
+		def area
+			array = [sideA, sideB, sideC]
 			mult = 1
-			s = (perimeter(hash).to_f/2)
-
-			hash.each do |key, value|
-				mult *= (s - value)
+			s = (perimeter.to_f/2)
+			#binding.pry
+			array.each do |side|
+				mult *= (s - side)
 			end
-
 			s = s * mult
-			binding.pry
+			#binding.pry
 			Math::sqrt(s)
+		end
+
+		def angles
+
+
 		end
 
 	end

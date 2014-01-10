@@ -1,4 +1,3 @@
-
 module Geometry
   class Triangle
     attr_accessor :sideA, :sideB, :sideC, :angles
@@ -30,6 +29,11 @@ module Geometry
     end
 
     def valid?
+      begin
+        self.angles.inject(0) { |sum, angle| sum + angle} == 180
+        rescue Math::DomainError
+        return false
+      end
     end
   end
 end

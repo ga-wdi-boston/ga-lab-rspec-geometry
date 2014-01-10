@@ -38,6 +38,10 @@ module Geometry
 			@angle_array << angleC
 			@angle_array
 		end
+
+		def valid?
+			(@sideA + @sideB > @sideC) && (@sideB + @sideC > @sideA) && (@sideA + @sideC > @sideB)
+		end
 	end
 end
 

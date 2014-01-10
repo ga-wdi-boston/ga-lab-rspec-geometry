@@ -27,4 +27,16 @@ describe Geometry::Triangle do
 			expect(triangle.angles).to eq [59.99999999999999, 59.99999999999999, 60.00000000000001]
 		end
 	end
+
+	describe '#valid?' do
+		it 'should return true if the triangle sides are valid' do
+			triangle = Geometry::Triangle.new(3,6,8)
+			expect(triangle.valid?).to eq true
+		end
+
+		it 'should return false if the triangle sides are not valid' do
+			triangle = Geometry::Triangle.new(1,2,5)
+			expect(triangle.valid?).to eq false
+		end
+	end
 end

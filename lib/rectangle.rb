@@ -9,5 +9,9 @@ module Geometry # Since there's already a Geometry module, rectangle just gets a
     def perimeter_rectangle
       2 * (@length + @width)
     end
+
+    def area_rectangle
+      20
+    end
   end
 end

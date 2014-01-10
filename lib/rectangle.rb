@@ -6,13 +6,12 @@ module Geometry
 			@width = width
 		end
 
-		def calculte_perimeter
-			perimeter = (@length + @width) * 2
+		def calculate_perimeter
+			peri = (@length + @width) * 2
 		end
 
 		def calculate_area
-			area = @length * @width
+			are = @length * @width
 		end
 	end
-	
 end

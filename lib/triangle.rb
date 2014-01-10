@@ -1,5 +1,4 @@
 module Geometry
-	
 	class Triangle
 		attr_accessor :sideA, :sideB, :sideC
 		def initialize(sideA, sideB, sideC)
@@ -16,5 +15,10 @@ module Geometry
 			p = (@sideA + @sideB +@sideC)/2
 			area = Math.sqrt(p * (p - @sideA) * (p-sideB) * (p-sideC))
 		end
+
+		def calculate_angle
+		end
+
+
 	end
 end

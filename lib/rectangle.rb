@@ -11,6 +11,10 @@ module Geometry
 		end
 
 		def perimeter_rec
+			(2 * length) + (2 * width)
+		end
+
+		def area_rec
 			length * width
 		end
 

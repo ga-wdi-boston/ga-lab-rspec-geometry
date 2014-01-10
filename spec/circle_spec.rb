@@ -9,4 +9,10 @@ describe Geometry::Circle do
     end
   end
 
+  describe '#area_circle' do
+    it 'calculates the area of a circle' do
+      circle = Geometry::Circle.new(5)
+      expect(circle.area_circle).to eq Math::PI * (5 ** 2)
+    end
+  end
 end

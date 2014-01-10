@@ -17,4 +17,19 @@ describe Geometry::Triangle do
 		end
 	end
 
+	describe '#valid?' do
+		it 'returns true if triangle is valid' do
+			triangle = Geometry::Triangle.new(3,4,5)
+			expect(triangle.valid?).to eq true
+		end
+	end
+
+	describe '#valid?' do
+		it 'returns false if triangle is not valid' do
+			triangle = Geometry::Triangle.new(20,1,1)
+			expect(triangle.valid?).to eq false
+		end
+	end
+
+
 end

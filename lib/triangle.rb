@@ -20,5 +20,17 @@ module Geometry # container for classes
 			Math.sqrt(s*(s-@adjacent)*(s-@opposite)*(s-@hypotenuse))
 		end
 
+		# calculates if the triangle is valid
+		def valid?
+			if
+					@adjacent + @opposite > @hypotenuse &&
+					@adjacent + @hypotenuse > @opposite &&
+					@opposite + @hypotenuse > @adjacent
+				return true
+				else
+				return false
+			end
+		end
+
 	end
 end

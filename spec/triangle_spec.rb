@@ -11,9 +11,14 @@ describe Geometry::Triangle do
   end
 
   describe '#area' do
-    it 'returns the area of a triangle' do
+    it 'returns the area of a triangle height 4 and base 3' do
       triangle = Geometry::Triangle.new(3,4,5)
-      expect(triangle.area).to eq
+      expect(triangle.area(4,3)).to eq 6
+    end
+
+    it 'returns the area of a triangle with h 8 and b 6' do
+      triangle = Geometry::Triangle.new(6,8,10)
+      expect(triangle.area(8,6)).to eq 24
     end
   end
 end

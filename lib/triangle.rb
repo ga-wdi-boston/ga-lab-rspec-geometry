@@ -12,8 +12,9 @@ module Geometry
 			perimeter = @sideA + @sideB + @sideC
 		end
 
-		# def calculate_area
-		# 	p = (@sideA + @sideB +@sideC)/2
-		# 	(p(p - @sideA)(p-sideB)(p-sideC)).sqrt
+		def calculate_area
+			p = (@sideA + @sideB +@sideC)/2
+			area = Math.sqrt(p * (p - @sideA) * (p-sideB) * (p-sideC))
+		end
 	end
 end

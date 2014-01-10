@@ -22,6 +22,10 @@ describe Geometry::Rectangle do
       expect(rect.area).to eq 8
     end
 
+    it 'returns the area of a rectangle' do
+      rect = Geometry::Rectangle.new(3,5)
+      expect(rect.area).to eq 15
+    end
   end
 
 

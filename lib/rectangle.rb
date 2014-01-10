@@ -17,6 +17,7 @@ module Geometry # container for classes
 
 		# calculate the area
 		def area
+			@length * @width
 		end
 
 	end

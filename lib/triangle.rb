@@ -1,7 +1,7 @@
 require 'pry'
 module Geometry
 	class Triangle
-		attr_accessor :sideA, :sideB, :sideC, :angle_array
+		attr_accessor :sideA, :sideB, :sideC
 
 		def initialize(sideA, sideB, sideC)
 			sides = [sideA, sideB, sideC].sort

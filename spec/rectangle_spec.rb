@@ -12,12 +12,16 @@ describe Geometry::Rectangle do
 			rectangle = Geometry::Rectangle.new(4, 5)
 			expect(rectangle.perimeter).to eq 18
 		end
+	end
 
-		# it 'returns 0 if no sides are given' do
-		# 	sides_hash = {}
-		# 	triangle = Geometry::Triangle.new(sides_hash)
-		# 	expect(triangle.perimeter(sides_hash)).to eq(0)
-		# end
 
+	describe '#area' do
+
+		it 'returns the area of the rectangle' do
+
+			rectangle = Geometry::Rectangle.new(4, 5)
+			expect(rectangle.area).to eq 20
+
+		end
 	end
 end

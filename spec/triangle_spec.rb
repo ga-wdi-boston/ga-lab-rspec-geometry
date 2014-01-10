@@ -23,4 +23,16 @@ describe Geometry::Triangle do
 			expect(triangle4.area).to eq 66
 		end
 	end
+
+	describe '#cosine_a' do
+		it 'calculates the cosine of side a' do
+			triangle5 = Geometry::Triangle.new(8, 6, 7, 7.5, 7)
+			expect(triangle5.cosine_a).to eq 0.25
+		end
+
+		# it 'calculates the inverse cosine of side a' do
+		# 	triangle5 = Geometry::Triangle.new(8, 6, 7, 7.5, 7)
+		# 	expect(triangle5.angle_a).to eq 75.5
+		# end
+	end
 end

@@ -32,5 +32,19 @@ module Geometry # container for classes
 			end
 		end
 
+		# calculates the angles of a triangle
+		# output is an array
+		def angles
+			a = @adjacent
+			b = @opposite
+			c = @hypotenuse
+
+			angle_a = ( ((a**2)-(b**2)-(c**2) / (-2*b*c) ) * ( 180 / Math::PI ) )
+			angle_b = ( ((b**2)-(a**2)-(c**2) / (-2*a*c) ) * ( 180 / Math::PI ) )
+			angle_c = ( ((c**2)-(b**2)-(a**2) / (-2*b*a) ) * ( 180 / Math::PI ) )
+
+			[angle_a.to_f, angle_b.to_f, angle_c.to_f]
+		end
+
 	end
 end

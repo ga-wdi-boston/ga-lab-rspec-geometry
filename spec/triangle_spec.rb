@@ -31,5 +31,12 @@ describe Geometry::Triangle do
 		end
 	end
 
+	describe '#angles' do
+		it 'returns an array' do
+			triangle = Geometry::Triangle.new(3,4,5)
+			expect(triangle.angles).to be_an Array
+		end
+	end
+
 
 end

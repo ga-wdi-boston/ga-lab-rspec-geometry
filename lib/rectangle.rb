@@ -1,24 +1,22 @@
-# The Rectangle will have instance variables of @length and @width. It needs methods to calcualte the perimeter and area of the rectangle.
 
 module Geometry
-
 	class Rectangle
+
 		attr_accessor :length, :width
 
-		def initialize
+		def initialize(length, width)
 			@length = length
 			@width = width
 		end
 
-		def perimenter
+		def perimeter
+			p = (@length*2) + (@width*2)
 		end
 
 		def area
+			a = @length * @width
 		end
-
 
 	end
 end
 
-
-Geometry::Rectangle.new

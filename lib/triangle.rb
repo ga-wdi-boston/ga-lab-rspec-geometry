@@ -15,6 +15,13 @@ module Geometry
     	(0.5*(@sideA)) * @sideB
     end
 
+    def angle
+
+    end
+
+    def is_triangle
+    end
+
   end
 end
 

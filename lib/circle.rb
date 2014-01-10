@@ -4,7 +4,7 @@ module Geometry # container for classes
 		attr_accessor :radius
 
 		def initialize(radius)
-			@radius = radius
+			@radius = radius.to_f
 		end
 
 		# calculate the circumference

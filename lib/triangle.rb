@@ -42,6 +42,10 @@ module Geometry
 			[angle_a, angle_b, angle_c]
 		end
 
+		def valid?
+			return true if @sideA + @sideB > @sideC && @sideA + @sideC > @sideB && @sideB + @sideC > @sideA
+		end
+
 		private
 
 		def angle_opposite_sides(angle_side, left_side, right_side)

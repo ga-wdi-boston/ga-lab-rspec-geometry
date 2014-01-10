@@ -42,6 +42,16 @@ describe Geometry::Triangle do
 		end
 	end
 
+	describe '#valid?' do
+
+		it 'returns true if the sides are valid length' do
+
+			triangle = Geometry::Triangle.new(2, 2, 3)
+			expect(triangle.valid?).to eq true
+		end
+
+	end
+
 
 
 

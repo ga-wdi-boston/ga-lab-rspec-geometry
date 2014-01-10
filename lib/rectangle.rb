@@ -11,5 +11,9 @@ module Geometry
 		def perimeter
 			rectangle_perimeter = @sideA + @sideB + @sideC + @sideD
 		end
+
+		def area
+			rectangle_area = @sideA * @sideB
+		end
 	end
 end

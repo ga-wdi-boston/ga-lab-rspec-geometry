@@ -12,4 +12,16 @@ describe Geometry::Rectangle do
 			expect(rect2.perimeter).to eq 48
 		end
 	end
+
+	describe '#area' do
+		it 'finds the area of the rectangle' do
+			rect3 = Geometry::Rectangle.new(5, 6, 6, 5)
+			expect(rect3.area).to eq 30
+		end
+
+		it 'finds the area of the rectangle' do
+			rect4 = Geometry::Rectangle.new(7, 7, 7, 7)
+			expect(rect4.area).to eq 49
+		end
+	end
 end

@@ -38,7 +38,7 @@ describe Geometry::Triangle do
 		it 'returns the angles of the triangle' do
 
 				triangle = Geometry::Triangle.new(3, 3, 3)
-				expect(triangle.angles).to eq 60
+				expect(triangle.angles).to eq [59.99999999999999, 59.99999999999999, 59.99999999999999]
 		end
 	end
 

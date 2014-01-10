@@ -4,5 +4,9 @@ module Geometry # Module is a way to organize classes
     def initialize(radius)
       @radius = radius
     end
+
+    def circumference
+      @radius * 2 * Math::PI
+    end
   end
 end

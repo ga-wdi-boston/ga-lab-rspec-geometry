@@ -11,7 +11,7 @@ module Geometry # Since there's already a Geometry module, rectangle just gets a
     end
 
     def area_rectangle
-      20
+      @length * @width
     end
   end
 end

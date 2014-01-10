@@ -19,5 +19,10 @@ describe Geometry::Rectangle do
       rectangle = Geometry::Rectangle.new(5, 4)
       expect(rectangle.area_rectangle).to eq 20
     end
+
+    it 'multiplies the length and width of a rectangle' do
+      rectangle = Geometry::Rectangle.new(3, 7)
+      expect(rectangle.area_rectangle).to eq 21
+    end
   end
 end

@@ -38,5 +38,14 @@ module Geometry
 			angle_array << angle_c
 			return angle_array
 		end
+
+		# a+b > c and a +c > b  and  b+c  > a
+		def valid?
+			if  side_a + side_b > side_c && side_a + side_c > side_b && side_b + side_c > side_a
+				return true
+			else
+				return false
+			end
+		end
 	end
 end

@@ -39,4 +39,24 @@ describe Geometry::Triangle do
 			expect(test_tri_3.angle_finder).to eq expected_array
 		end
 	end
+	describe '#valid?' do
+		it 'can those 3 sides be a valid triangle?' do
+			test_tri_4 = Geometry::Triangle.new
+
+			test_tri_4.side_a = 3
+			test_tri_4.side_b = 6
+			test_tri_4.side_c = 12
+
+			expect(test_tri_4.valid?).to eq false
+		end
+	end
 end
+
+
+
+
+
+
+
+
+

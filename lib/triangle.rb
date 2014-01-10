@@ -13,8 +13,10 @@ module Geometry
       @sideA + @sideB + @sideC
     end
 
-    def area(height, base)
-      0.5 * height * base
+    def area
+      # use Heron's formula
+      s = self.perimeter / 2
+      (s * (s - @sideA) * (s - @sideB) * (s - @sideC)) ** 0.5
     end
 
     def angles(type)

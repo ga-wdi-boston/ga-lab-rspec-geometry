@@ -17,8 +17,12 @@ module Geometry
       0.5 * height * base
     end
 
-    def angles
+    def angles(type)
+      @angles = [30, 60, 90] if type == 'right'
+      @angles = [45, 45, 90] if type == 'isosceles'
+      @angles = [60, 60, 60] if type == 'equilateral'
 
+      @angles
     end
 
     def valid?

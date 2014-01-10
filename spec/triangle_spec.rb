@@ -21,4 +21,21 @@ describe Geometry::Triangle do
       expect(triangle.area(8,6)).to eq 24
     end
   end
+
+  describe '#angles' do
+    it 'returns an array of three angles based on type' do
+      triangle = Geometry::Triangle.new(3,4,5)
+      expect(triangle.angles('right')).to eq [30, 60, 90]
+    end
+
+    it 'returns an array of three angles based on type' do
+      triangle = Geometry::Triangle.new(3,4,5)
+      expect(triangle.angles('isosceles')).to eq [45, 45, 90]
+    end
+
+    it 'returns an array of three angles based on type' do
+      triangle = Geometry::Triangle.new(3,4,5)
+      expect(triangle.angles('equilateral')).to eq [60, 60, 60]
+    end
+  end
 end

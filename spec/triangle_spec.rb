@@ -13,4 +13,15 @@ describe Geometry::Triangle do
 			expect(test_tri.perimeter).to eq 7
 		end
 	end
+	describe '#area_tri' do
+		it 'calc area' do
+			test_tri_2 = Geometry::Triangle.new
+
+			test_tri_2.side_a = 2.0
+			test_tri_2.side_b = 2.0
+			test_tri_2.side_c = 2.0
+
+			expect(test_tri_2.area_tri).to eq 1.7320508075688772
+		end
+	end
 end

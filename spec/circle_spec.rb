@@ -17,7 +17,12 @@ describe Geometry::Circle do
   describe '#area' do
     it 'returns the area of a circle' do
       circle = Geometry::Circle.new(5)
-      expect(circle.circumference).to eq 78.5398
+      expect(circle.area).to eq 78.5398
+    end
+
+    it 'returns the area of a circle' do
+      circle = Geometry::Circle.new(2)
+      expect(circle.area).to eq 12.5664
     end
   end
 

@@ -12,10 +12,10 @@ module Geometry # container for classes
 			2 * Math::PI * @radius
 		end
 
-		# # calculate the area
-		# def area
-		# 	@length * @width
-		# end
+		# calculate the area
+		def area
+			Math::PI * @radius ** 2
+		end
 
 	end
 end

@@ -1,4 +1,3 @@
-
 # The Triangle will have instance variables of @sideA, @sideB and @sideC. Triangle needs methods to calculate the perimeter, area, angles (outputs an array of angles), and valid?.
 
 module Geometry

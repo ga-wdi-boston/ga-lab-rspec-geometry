@@ -13,7 +13,16 @@ module Geometry # Module is a way to organize classes
     end
 
     def area
-      Math.sqrt(18.75)
+      s = self.perimeter / 2
+      Math.sqrt(s * (s - @sideA) * (s - @sideB) * (s - @sideC))
+    end
+
+    def valid?
+      if ((sideA + sideB) > sideC) && ((sideB + sideC) > sideA) && ((sideA + sideC) > sideB)
+        true
+      else
+        false
+      end
     end
   end
 end

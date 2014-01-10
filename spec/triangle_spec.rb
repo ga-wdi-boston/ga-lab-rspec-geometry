@@ -10,21 +10,21 @@ describe Geometry::Triangle do
 	end
 
 	describe '#area' do
-		it 'add the lengths of the sides' do 
+		it 'add the lengths of the sides' do
 			triangle = Geometry::Triangle.new(3, 4, 5)
 			expect(triangle.calculate_area).to eq 6
 		end
 	end
 
 	describe '#angle' do
-		it 'add the lengths of the sides' do 
-			triangle = Geometry::Triangle.new(3.0, 3.0, 3.0)
-			expect(triangle.calculate_angle).to eq [60, 60, 60]
+		it 'add the lengths of the sides' do
+			triangle = Geometry::Triangle.new(3, 3, 3)
+			expect(triangle.calculate_angle).to eq [59.99999999999999, 59.99999999999999, 59.99999999999999]
 		end
 	end
 
 	describe '#valid' do
-		it 'add the lengths of the sides' do 
+		it 'add the lengths of the sides' do
 			triangle = Geometry::Triangle.new(3, 3, 3)
 			expect(triangle.valid?).to eq true
 		end

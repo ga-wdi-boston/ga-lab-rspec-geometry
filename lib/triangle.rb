@@ -1,11 +1,11 @@
+require 'pry'
 module Geometry
-	require 'pry'
 	class Triangle
 		attr_accessor :sideA, :sideB, :sideC
 		def initialize(sideA, sideB, sideC)
 			@sideA = sideA
 			@sideB = sideB
-			@sideC = sideC 
+			@sideC = sideC
 		end
 
 		def calculate_perimeter
@@ -14,7 +14,7 @@ module Geometry
 
 		def calculate_area
 			p = (@sideA + @sideB +@sideC)/2
-			area = Math.sqrt(p * (p - @sideA) * (p-sideB) * (p-sideC))
+			area = Math.sqrt(p * (p - @sideA) * (p -sideB) * (p-sideC))
 		end
 
 		def calculate_angle
@@ -22,9 +22,12 @@ module Geometry
 			a = @sideA.to_f
 			b = @sideB.to_f
 			c = @sideC.to_f
-			angle << (a/(a + b + c)) * 180
-			angle << (b/(a + b + c)) * 180
-			angle << (c/(a + b + c)) * 180
+			angleA = (b ** 2 + c ** 2 - a ** 2)/(2 * b * c)
+			angleB = (a ** 2 + c ** 2 - b ** 2)/(2 * a * c)
+			angleC = (a ** 2 + b ** 2 - c ** 2)/(2 * a * b)
+			angle << Math.acos(angleA) * 180 / Math::PI
+			angle << Math.acos(angleB) * 180 / Math::PI
+			angle << Math.acos(angleC) * 180 / Math::PI
 			return angle
 		end
 

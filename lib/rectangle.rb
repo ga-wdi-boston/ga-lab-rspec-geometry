@@ -7,7 +7,7 @@ module Geometry # Since there's already a Geometry module, rectangle just gets a
     end
 
     def perimeter_rectangle
-      18
+      2 * (@length + @width)
     end
   end
 end

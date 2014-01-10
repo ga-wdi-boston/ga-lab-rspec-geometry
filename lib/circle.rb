@@ -12,5 +12,6 @@ module Geometry
     def area
       3.14 * (@radius * @radius)
     end
+
   end
 end

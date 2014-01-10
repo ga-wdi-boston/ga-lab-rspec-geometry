@@ -10,5 +10,9 @@ module Geometry
     def perimeter
       @num1 + @num2 + @num3
     end
+
+    def area
+      0.5 * (@num1 * @num2)
+    end
   end
 end

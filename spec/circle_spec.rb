@@ -14,5 +14,6 @@ describe Geometry::Circle do
       circle = Geometry::Circle.new(6)
       expect(circle.area).to eq 113.04
     end
+
   end
 end

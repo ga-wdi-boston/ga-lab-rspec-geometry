@@ -4,11 +4,9 @@ module Geometry # container for classes
 		attr_accessor :length, :width
 
 		def initialize(length, width)
-
-		@length = length
-		@width = width
-
-	end
+			@length = length
+			@width = width
+		end
 
 		# calculate the perimeter
 		def perimeter

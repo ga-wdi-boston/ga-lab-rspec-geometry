@@ -14,4 +14,14 @@ describe Geometry::Circle do
       expect(second_circle.circumference).to be_within(0.001).of(295.309)
     end
   end
+
+  describe '#area' do
+    it 'returns the area of the circle' do
+      first_circle = Geometry::Circle.new(8)
+      second_circle = Geometry::Circle.new(33)
+
+      expect(first_circle.area).to be_within(0.001).of(201.061)
+      expect(second_circle.area).to be_within(0.001).of(3421.194)
+    end
+  end
 end

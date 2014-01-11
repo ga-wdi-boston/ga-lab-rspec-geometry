@@ -44,6 +44,7 @@ module Geometry
     # the target side and the two other sides. Uses the Law of Cosines to get
     # the cosine of the angle, then gets the angle itself in radians using the
     # inverse cosine method `acos`, and converts that to degrees.
+    # Look up the Math module to see where `acos` and `PI` are coming from.
     def angle_opposite_side(target_side, sideB, sideC)
       cosine = (sideB ** 2 + sideC ** 2 - target_side ** 2).to_f / (2 * sideB * sideC)
       Math.acos(cosine) * (180 / Math::PI)

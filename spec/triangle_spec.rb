@@ -28,7 +28,33 @@ describe Geometry::Triangle do
       second_triangle = Geometry::Triangle.new(8, 6, 7)
 
       expect(first_triangle.angles).to eq [22.331645009221504, 49.45839812649548, 108.20995686428301]
-      expect(second_triangle.angles).to eq [75.52248781407008, 46.56746344221023, 57.9100487437197]
+      expect(second_triangle.angles).to eq [46.56746344221023, 57.9100487437197, 75.52248781407008]
+    end
+  end
+
+  describe '#valid?' do
+    it 'returns true for valid triangles' do
+      triangles = [
+        Geometry::Triangle.new(2, 4, 5),
+        Geometry::Triangle.new(6, 8, 10),
+        Geometry::Triangle.new(8, 6, 7)
+      ]
+
+      expect(triangles[0]).to be_valid
+      expect(triangles[1]).to be_valid
+      expect(triangles[2]).to be_valid
+    end
+
+    it 'returns false for invalid triangles' do
+      triangles = [
+        Geometry::Triangle.new(1, 1, 10),
+        Geometry::Triangle.new(5, 0, 5),
+        Geometry::Triangle.new(5, 1, 1)
+      ]
+
+      expect(triangles[0]).to_not be_valid
+      expect(triangles[1]).to_not be_valid
+      expect(triangles[2]).to_not be_valid
     end
   end
 end

@@ -1,7 +1,7 @@
 module Geometry
   class Triangle
     def initialize(sideA, sideB, sideC)
-      @sideA, @sideB, @sideC = sideA, sideB, sideC
+      @sideA, @sideB, @sideC = [sideA, sideB, sideC].sort
     end
 
     def perimeter
@@ -19,6 +19,10 @@ module Geometry
         angle_opposite_side(@sideB, @sideA, @sideC),
         angle_opposite_side(@sideC, @sideA, @sideB)
       ]
+    end
+
+    def valid?
+      @sideA + @sideB > @sideC
     end
 
     private

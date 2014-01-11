@@ -12,5 +12,9 @@ module Geometry
       # are not needed here. But they are useful for clarifying larger formulas.
       @length * 2 + @width * 2
     end
+
+    def area
+      @length * @width
+    end
   end
 end

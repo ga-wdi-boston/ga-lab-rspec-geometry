@@ -11,4 +11,14 @@ describe Geometry::Rectangle do
       expect(second_rectangle.perimeter).to eq 20
     end
   end
+
+  describe '#area' do
+    it 'returns the area of the rectangle' do
+      first_rectangle = Geometry::Rectangle.new(2, 5)
+      second_rectangle = Geometry::Rectangle.new(3, 7)
+
+      expect(first_rectangle.area).to eq 10
+      expect(second_rectangle.area).to eq 21
+    end
+  end
 end

@@ -21,4 +21,14 @@ describe Geometry::Triangle do
       expect(second_triangle.area).to eq 24
     end
   end
+
+  describe '#angles' do
+    it 'returns the angles of the triangle' do
+      first_triangle = Geometry::Triangle.new(2, 4, 5)
+      second_triangle = Geometry::Triangle.new(8, 6, 7)
+
+      expect(first_triangle.angles).to eq [22.331645009221504, 49.45839812649548, 108.20995686428301]
+      expect(second_triangle.angles).to eq [75.52248781407008, 46.56746344221023, 57.9100487437197]
+    end
+  end
 end

@@ -27,6 +27,9 @@ describe Geometry::Triangle do
       first_triangle = Geometry::Triangle.new(2, 4, 5)
       second_triangle = Geometry::Triangle.new(8, 6, 7)
 
+      # I calculated these numbers manually to a few decimal places using the
+      # Law of Cosines, then copy-pasted the actual output from the test failure
+      # when I saw the values were "close enough". Same goes for line 20.
       expect(first_triangle.angles).to eq [22.331645009221504, 49.45839812649548, 108.20995686428301]
       expect(second_triangle.angles).to eq [46.56746344221023, 57.9100487437197, 75.52248781407008]
     end
@@ -43,6 +46,8 @@ describe Geometry::Triangle do
       expect(triangles[0]).to be_valid
       expect(triangles[1]).to be_valid
       expect(triangles[2]).to be_valid
+      # This shortcut works for any "?" method that returns true or false.
+      # Equivalent to: expect(triangles[0].valid?).to eq true
     end
 
     it 'returns false for invalid triangles' do
@@ -55,6 +60,8 @@ describe Geometry::Triangle do
       expect(triangles[0]).to_not be_valid
       expect(triangles[1]).to_not be_valid
       expect(triangles[2]).to_not be_valid
+      # Using `.to_not` instead of `.to` inverts the expectation.
+      # Equivalent to: expect(triangles[0].valid?).to eq false
     end
   end
 end

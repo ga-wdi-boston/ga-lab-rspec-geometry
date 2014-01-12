@@ -7,17 +7,16 @@ module Geometry
 	class Circle
 		attr_accessor :radius
 
-		def initialize
+		def initialize(radius)
 			@radius = radius
 		end
 
 		def circumfrence
-			2 * radius * Math::PI
+			2 * Math::PI * radius
 		end
 
 		def area_cir
-			(radius**2) * Math::PI
+			Math::PI * (radius**2)
 		end
 	end
 end
-

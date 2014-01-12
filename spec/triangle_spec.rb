@@ -59,7 +59,7 @@ describe Geometry::Triangle do
 		end
 
 		it 'calculates if a triangle is valid' do
-			triangle7 = Geometry::Triangle.new(1, 1, 10, 3, 3)
+			triangle7 = Geometry::Triangle.new(1, 1, 6, 3, 3)
 			expect(triangle7.angle_array).to eq false
 		end
 	end

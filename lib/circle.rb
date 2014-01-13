@@ -11,7 +11,7 @@ module Geometry
 		end
 
     def circumference
-		  diameter = @radius * 2
+		  diameter = @radius *  2
 		  circle_circumference = (Math::PI) * diameter
     end
   end

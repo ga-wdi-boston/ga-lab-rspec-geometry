@@ -4,10 +4,21 @@ require_relative '../lib/rectangle.rb'
 describe Rectangle do
   describe '#initialize' do
     it 'accepts a length and width' do
-      rectangle = Rectangle.new(6,4)
+      rectangle = Rectangle.new(6, 4)
 
       expect(rectangle.length).to eq 6
       expect(rectangle.width).to(eq (4)) # eq is a matcher method
     end
   end
+
+  describe '#area' do
+    it 'calculates the area' do
+      rectangle = Rectangle.new(10, 2)
+
+      expect(rectangle.area).to eq 20
+    end
+  end
+
+  describe ''
+
 end

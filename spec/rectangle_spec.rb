@@ -2,10 +2,10 @@
 require_relative '../lib/rectangle.rb'
 
 describe Rectangle do
-  #will assign this variable to each test
+  #will assign this variable to each test,  more efficient, but not necessarily more readable
   let(:rectangle) { Rectangle.new(7, 5) }
 
-  describe '#initialize' do
+  describe 'attributes' do
     it 'accepts a length and width' do
       #rectangle = Rectangle.new(6, 4)
 

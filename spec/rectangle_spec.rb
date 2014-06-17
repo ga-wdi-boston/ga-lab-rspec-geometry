@@ -19,6 +19,13 @@ describe Rectangle do
     end
   end
 
-  describe ''
+  describe '#perimeter' do
+    it 'calculates the perimeter' do
+      rectangle = Rectangle.new(3, 4)
+
+      expect(rectangle.perimeter).to eq 14
+    end
+  end
+
 
 end
